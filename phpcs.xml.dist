@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset
+    name="HBPro 2.0 coding standard"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd"
+>
+    <description>The coding standard for pdepend-summary-formatter.</description>
+
+    <file>bin/</file>
+    <file>src/</file>
+
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+    <arg name="encoding" value="utf-8"/>
+
+    <config name="SlevomatStandardPath" value="vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml"/>
+
+    <!-- PSR1, PSR2, RSR12 rules ========================================== -->
+
+    <rule ref="PSR1.Classes.ClassDeclaration"/>
+
+    <rule ref="PSR1.Files.SideEffects"/>
+
+    <rule ref="PSR2">
+        <exclude name="Generic.Commenting.DocComment.MissingShort" />
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
+    </rule>
+
+    <rule ref="PSR12"/>
+
+
+    <!-- Generic rules ==================================================== -->
+
+    <!-- Forbid dump functions  -->
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array" value="dump=>NULL,var_dump=>NULL,die=>NULL,exit=>NUll"/>
+        </properties>
+    </rule>
+
+    <!-- Force whitespace after a type cast -->
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+
+    <!-- StrictTypes declaration is required -->
+    <!--<rule ref="Generic.PHP.RequireStrictTypes"/>-->
+
+    <!-- Squiz rules ====================================================== -->
+
+    <!-- Forbid blank line after function opening brace -->
+    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
+
+    <!-- Forbid spaces around square brackets -->
+    <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+
+    <!-- Force array declaration structure -->
+    <rule ref="Squiz.Arrays.ArrayDeclaration">
+        <!-- Disable arrow alignment -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned"/>
+        <!-- Uses indentation of only single space -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
+        <!-- Allow multiple values on a single line -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/>
+        <!-- Allow single value on a multiple line -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed"/>
+        <!-- Allow associative arrays with unspecified keys -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.KeySpecified"/>
+        <!-- Disable alignment of braces -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
+        <!-- Disable alignment of values with opening brace -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/>
+        <!-- Checked by SlevomatCodingStandard.Arrays.TrailingArrayComma.MissingTrailingComma -->
+        <exclude name="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast"/>
+    </rule>
+
+    <!-- Forbid spaces before semicolon `;` -->
+    <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+
+    <!-- Disable errors "Blank line found at start/end of control structure" -->
+    <rule ref="Squiz.WhiteSpace.ControlStructureSpacing">
+        <!-- Disable error "Blank line found at start of control structure" -->
+        <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterOpen"/>
+        <!-- "Blank line found at end of control structure" -->
+        <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingBeforeClose"/>
+    </rule>
+
+    <!-- Disable error "Expected 0 blank lines after opening function brace" -->
+    <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace">
+        <exclude name="Squiz.WhiteSpace.FunctionOpeningBraceSpace.SpacingAfter"/>
+    </rule>
+
+    <!-- SlevomatCodingStandard rules ===================================== -->
+
+    <!-- Forbid duplicate spaces -->
+    <rule ref="SlevomatCodingStandard.Whitespaces.DuplicateSpaces">
+        <properties>
+            <!-- To disable warnings on annotation swagger in controllers.
+            In annotations to controllers, alignment with problems is necessary,
+            otherwise the annotation becomes difficult to read -->
+            <property name="ignoreSpacesInAnnotation" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- Forbid using absolute class name references (except global ones) -->
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+        <properties>
+            <property name="allowFallbackGlobalConstants" value="true"/>
+            <property name="allowFallbackGlobalFunctions" value="true"/>
+            <property name="allowFullyQualifiedGlobalClasses" value="false"/>
+            <property name="allowFullyQualifiedGlobalConstants" value="false"/>
+            <property name="allowFullyQualifiedGlobalFunctions" value="false"/>
+            <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
+            <property name="allowFullyQualifiedNameForCollidingConstants" value="true"/>
+            <property name="allowFullyQualifiedNameForCollidingFunctions" value="true"/>
+            <property name="searchAnnotations" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- Enforces one configurable number of lines after opening class/interface/trait brace and one empty line before the closing brace. -->
+    <rule ref="SlevomatCodingStandard.Classes.EmptyLinesAroundClassBraces">
+        <properties>
+            <property name="linesCountAfterOpeningBrace" value="0"/>
+            <property name="linesCountBeforeClosingBrace" value="0"/>
+        </properties>
+    </rule>
+
+    <!-- Checks that there is a certain number of blank lines between methods. -->
+    <rule ref="SlevomatCodingStandard.Classes.MethodSpacing">
+        <properties>
+            <property name="minLinesCount" value="1"/>
+            <property name="maxLinesCount" value="1"/>
+        </properties>
+    </rule>
+
+    <!-- Checks declaration of arrow functions. -->
+    <rule ref="SlevomatCodingStandard.Functions.ArrowFunctionDeclaration"/>
+
+    <!-- Checks whether the nullablity ? symbol is present before each nullable and optional parameter (which are marked as = null). -->
+    <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
+
+    <!-- Checks for missing parameter typehints in case they can be declared natively. -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification" />
+    </rule>
+
+    <!-- Checks for missing property typehints in case they can be declared natively. -->
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
+        <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification" />
+    </rule>
+
+    <!-- Checks for missing return typehints in case they can be declared natively. -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
+        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
+    </rule>
+
+    <!-- Enforces consistent formatting of return typehints. -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing"/>
+
+    <!-- Checks that there's a single space between a typehint and a parameter name. -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
+
+    <!-- Reports use of superfluous prefix or suffix "Abstract" for abstract classes. -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
+
+    <!-- Reports use of superfluous prefix or suffix "Interface" for interfaces. -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
+
+    <!-- Reports use of superfluous suffix "Trait" for traits. -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
+
+    <!-- Reports documentation comments containing only {@inheritDoc} annotation because inheritance is automatic and it's not needed to use a special annotation for it. -->
+    <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
+
+    <!-- Check Yoda conditions - switching operands around comparison operators. -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireYodaComparison"/>
+
+    <!-- This sniff finds unreachable catch blocks. -->
+    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
+
+    <!-- Reports empty functions body and requires at least a comment inside. -->
+    <rule ref="SlevomatCodingStandard.Functions.DisallowEmptyFunction"/>
+
+    <!-- Reports closures not using $this that are not declared static. -->
+    <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
+
+    <!-- Requires nowdoc syntax instead of heredoc when possible. -->
+    <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc"/>
+
+    <!-- Requires comments with single-line content to be written as multi-liners. -->
+    <rule ref="SlevomatCodingStandard.Commenting.DisallowOneLinePropertyDocComment"/>
+
+</ruleset>

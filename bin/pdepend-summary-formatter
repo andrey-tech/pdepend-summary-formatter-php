@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * @author    andrey-tech
+ * @copyright 2023 andrey-tech
+ * @link      https://github.com/andrey-tech/
+ * @license   MIT
+ */
+
+declare(strict_types=1);
+
+use AndreyTech\Pdepend\Summary\Formatter\Application;
+
+include_once __DIR__ . '/../autoload.php';
+
+$application = new Application();
+$exitCode = $application->run();
+exit($exitCode);

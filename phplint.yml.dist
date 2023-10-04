@@ -1,0 +1,7 @@
+path: ./
+warning: true
+no-cache: true
+extensions:
+    - php
+exclude:
+    - vendor
