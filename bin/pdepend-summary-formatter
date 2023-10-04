@@ -12,8 +12,26 @@ declare(strict_types=1);
 
 use AndreyTech\Pdepend\Summary\Formatter\Application;
 
-include_once __DIR__ . '/../autoload.php';
+(static function() {
+    foreach ([ '/../', '/../vendor/' ] as $path) {
+        $autoloadFile = __DIR__ . $path . 'autoload.php';
+        if (is_file($autoloadFile)) {
+            if (is_readable($autoloadFile)) {
+                require_once $autoloadFile;
+                return;
+            }
+            trigger_error('Can not read Composer file "autoload.php"', E_USER_ERROR);
+        }
+    }
+    trigger_error('Can not find Composer file "autoload.php"', E_USER_ERROR);
+})();
 
-$application = new Application();
-$exitCode = $application->run();
-exit($exitCode);
+(new class
+{
+    public function __invoke(): void
+    {
+        $application = new Application();
+        $exitCode = $application->run();
+        exit($exitCode);
+    }
+})();
