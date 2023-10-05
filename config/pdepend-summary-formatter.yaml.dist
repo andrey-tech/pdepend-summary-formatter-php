@@ -8,52 +8,52 @@ colorizer:
       # https://phpmd.org/rules/design.html#couplingbetweenobjects
       # https://pdepend.org/documentation/software-metrics/coupling-between-objects.html
       cbo:
-        green: [ 0, 12 ],
-        red+bold: [ 13, null ]
+        green: [ 0, 13 ],
+        red+bold: [ 14, null ]
 
       # https://phpmd.org/rules/codesize.html#excessiveclasslength
       loc:
-        green: [ 0, 999 ]
-        red+bold: [ 1000, null ]
+        green: [ 0, 1000 ]
+        red+bold: [ 1001, null ]
 
       # https://phpmd.org/rules/codesize.html#excessivepubliccount
       # https://pdepend.org/documentation/software-metrics/class-interface-size.html
       # https://pdepend.org/documentation/software-metrics/class-size.html
       cis:
-        green: [ 0, 44 ]
-        red+bold: [ 45, null ]
+        green: [ 0, 45 ]
+        red+bold: [ 46, null ]
 
       # https://phpmd.org/rules/codesize.html#toomanymethods
       nom:
-        green: [ 0, 24 ]
-        red+bold: [ 25, null ]
+        green: [ 0, 25 ]
+        red+bold: [ 26, null ]
 
       # https://phpmd.org/rules/codesize.html#toomanypublicmethods
       npm:
-        green: [ 0, 9 ]
-        red+bold: [ 10, null ]
+        green: [ 0, 10 ]
+        red+bold: [ 11, null ]
 
       # https://phpmd.org/rules/codesize.html#toomanyfields
       vars:
-        green: [ 0, 14 ],
-        red+bold: [ 15, null ]
+        green: [ 0, 15 ],
+        red+bold: [ 16, null ]
 
       # https://phpmd.org/rules/codesize.html#excessiveclasscomplexity
       # https://pdepend.org/documentation/software-metrics/weighted-method-count.html
       wmc:
-        green: [ 0, 49 ]
-        red+bold: [ 50, null ]
+        green: [ 0, 50 ]
+        red+bold: [ 51, null ]
 
       # https://learn.microsoft.com/ru-ru/visualstudio/code-quality/code-metrics-depth-of-inheritance?view=vs-2022
       # https://phpmd.org/rules/design.html#depthofinheritance
       dit:
-        green: [ 0, 5 ]
-        red+bold: [ 6, null ]
+        green: [ 0, 6 ]
+        red+bold: [ 7, null ]
 
       # https://phpmd.org/rules/design.html#numberofchildren
       nocc:
-        green: [ 0, 14 ]
-        red+bold: [ 15, null ]
+        green: [ 0, 15 ]
+        red+bold: [ 16, null ]
 
     # Metrics of method
     method:
@@ -74,8 +74,8 @@ colorizer:
       # https://phpmd.org/rules/codesize.html#npathcomplexity
       # https://modess.io/npath-complexity-cyclomatic-complexity-explained/
       npath:
-        green: [ 1, 199 ]
-        red+bold: [ 200, null ]
+        green: [ 1, 200 ]
+        red+bold: [ 201, null ]
 
       # https://learn.microsoft.com/en-us/visualstudio/code-quality/code-metrics-maintainability-index-range-and-meaning?view=vs-2022
       # https://habr.com/en/articles/111524/
@@ -89,8 +89,8 @@ colorizer:
 
       # https://phpmd.org/rules/codesize.html#excessivemethodlength
       loc:
-        green: [ 0, 99 ]
-        red+bold: [ 100, null ]
+        green: [ 0, 100 ]
+        red+bold: [ 101, null ]
 
       # https://en.wikipedia.org/wiki/Halstead_complexity_measures
       hb:
