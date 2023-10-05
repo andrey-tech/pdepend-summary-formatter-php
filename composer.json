@@ -1,7 +1,16 @@
 {
     "name": "andrey-tech/pdepend-summary-formatter-php",
     "description": "Tool to show software code quality metrics, measured by PHP Depend, in console and CI/CD",
-    "keywords": [ "pdepend", "PHP Depend", "PHP_Depend", "metrics", "quality", "console", "php", "dev" ],
+    "keywords": [
+        "dev",
+        "pdepend",
+        "metrics",
+        "metrics-visualization",
+        "cyclomatic-complexity",
+        "halstead-complexity",
+        "maintainability-index",
+        "console"
+    ],
     "homepage": "https://github.com/andrey-tech/pdepend-summary-formatter-php",
     "minimum-stability": "stable",
     "license": "MIT",
