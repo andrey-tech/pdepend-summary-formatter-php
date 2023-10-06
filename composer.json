@@ -43,6 +43,9 @@
     "conflict": {
         "pdepend/pdepend": "<2.15"
     },
+    "suggest": {
+        "phpmd/phpmd": "PHPMD is a spin-off project of PHP Depend"
+    },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
