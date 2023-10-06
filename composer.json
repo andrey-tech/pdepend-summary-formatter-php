@@ -25,7 +25,6 @@
         "issues": "https://github.com/andrey-tech/pdepend-summary-formatter-php/issues",
         "source": "https://github.com/andrey-tech/pdepend-summary-formatter-php"
     },
-
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-simplexml": "*",

@@ -3,6 +3,6 @@
 /.gitattributes                              export-ignore
 /.gitignore                                  export-ignore
 /phpcs.xml.dist                              export-ignore
-/phplint.xml.dist                            export-ignore
+/phplint.yml.dist                            export-ignore
 /phpmd.xml.dist                              export-ignore
 /psalm.xml.dist                              export-ignore
