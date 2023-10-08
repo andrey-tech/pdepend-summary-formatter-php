@@ -27,8 +27,8 @@ use function sprintf;
 
 final class Config
 {
-    private const CONFIG_FILE = 'pdepend-summary-formatter.yaml';
-    private const CONFIG_FILE_DIST = 'pdepend-summary-formatter.yaml.dist';
+    private const CONFIG_FILE = 'pdepend-summary-formatter.yml';
+    private const CONFIG_FILE_DIST = 'pdepend-summary-formatter.yml.dist';
     private const CONFIG_DIR = __DIR__ . '/../../../../../config';
 
     private ConsoleOutput $consoleOutput;

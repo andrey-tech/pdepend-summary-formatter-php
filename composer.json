@@ -1,6 +1,6 @@
 {
     "name": "andrey-tech/pdepend-summary-formatter-php",
-    "description": "Tool to show software code quality metrics, measured by PHP Depend, in console and CI/CD",
+    "description": "Tool to show software code quality metrics, measured by PHP Depend, in console and CI/CD pipeline",
     "keywords": [
         "dev",
         "pdepend",

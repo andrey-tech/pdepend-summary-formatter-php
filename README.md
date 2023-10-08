@@ -8,7 +8,7 @@
 
 Pdepend Summary Formatter is a tool to show software code quality metrics, measured by
 [PHP Depend](https://github.com/pdepend/pdepend) (pdepend),
-in console for development and in CI/CD.
+in console for development and in CI/CD pipeline.
 
 ## Table of contents
 <!-- MarkdownTOC levels="1,2,3,4,5,6" autoanchor="true" autolink="true" -->
@@ -35,7 +35,7 @@ composer require --dev pdepend/pdepend:"^2.15"
 composer require --dev andrey-tech/pdepend-summary-formatter-php
 ```
 
-Generate a default config file `pdepend-summary-formatter.yaml.dist` in current working directory:
+Generate a default config file `pdepend-summary-formatter.yml.dist` in current working directory:
 
 ```shell
 ./vendor/bin/pdepend-summary-formatter --init
@@ -63,7 +63,7 @@ measured by PHP Depend, in console and write results to specified text file `sum
 
 The command line interface also accepts the following optional arguments:
 
-- `--init` - Will generate a default config file `pdepend-summary-formatter.yaml.dist` in current working directory.
+- `--init` - Will generate a default config file `pdepend-summary-formatter.yml.dist` in current working directory.
 - `--output-file=` - Write results also to the specified text file.
 - `--config-file=` - The filepath to a custom config YAML file.
 - `--no-colors` - Disable colors in console.
@@ -72,10 +72,10 @@ An example command line of Pdepend Summary Formatter tool and PHP Depend tool:
 
 ```shell
 ./vendor/bin/pdepend --summary-xml=./var/summary.xml --suffix=php src,tests
-./vendor/bin/pdepend-summary-formatter ./var/summary.xml --config-file=./pdepend-sf.yaml --output-file=./var/summary.txt
+./vendor/bin/pdepend-summary-formatter ./var/summary.xml --config-file=./pdepend-summary-formatter.yml --output-file=./var/summary.txt
 ```
 
-An example of output file `summary.txt`:
+An example of output text file `summary.txt`:
 
 ```text
 FILE: src/AndreyTech/Pdepend/Summary/Formatter/Colorizer.php
@@ -112,12 +112,14 @@ from a given code base, these values can be used to measure the quality of a sof
 and they help to identify that parts of an application where a refactoring should be applied.
 
 Pdepend Summary Formatter tool shows only part of software metrics, measured by PHP Depend,
-and colors them (green, yellow, red) in the console according to boundaries for values,
-established in configuration YAML file.
+and colors them
+(<span style="color: green">green</span>, <span style="color: yellow">yellow</span>, <span style="color: red">red</span>)
+in the console according to boundaries for values, defined in configuration YAML file.
 
-This table give a list of the software metrics, shows by Depend Summary Formatter tool
+This table give a list of the software metrics, shows by Pdepend Summary Formatter tool
 for entire project, classes, traits, methods,
-and default values for red boundaries, based on [PHP Mess Detector](https://phpmd.org/) (PHPMD) tool.
+and default values for <span style="color: red">red</span> boundaries of software metrics,
+based on [PHP Mess Detector](https://phpmd.org/) (PHPMD) tool.
 
 | Metric | Description                                                                                                                                                                                                                      | Project | Class | Trait | Method |
 |--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|-------|-------|--------|
@@ -161,22 +163,22 @@ Note: ✓ - means there are no defined color boundaries for this metric.
 ## Configuration YAML file
 
 By default Pdepend Summary Formatter search following configuration YAML files is current working directory:
-- `pdepend-summary-formatter.yaml`,
-- `pdepend-summary-formatter.yaml.dist`.
+- `pdepend-summary-formatter.yml`,
+- `pdepend-summary-formatter.yml.dist`.
 
 Configuration YAML file allow to set color boundaries for values of software metrics.
 
 Pdepend Summary Formatter tool currently defines three color boundaries:
 
-| Color    | Description |
-|----------|-------------|
-| `green`  | Ok          |
-| `yellow` | Warning     |
-| `red`    | Error       |
+| Color                                     | Description |
+|-------------------------------------------|-------------|
+| <span style="color: green">green</span>   | Ok          |
+| <span style="color: yellow">yellow</span> | Warning     |
+| <span style="color: red">red</span>       | Error       |
 
 A white value means there are no defined color boundaries for this metric.
 
-> You can also add/set custom colors and options.
+> You can also add/set custom colors and styles.
 > See [How to Color and Style the Console Output](https://symfony.com/doc/current/console/coloring.html) in Symfony console.
 
 Fragment of default configuration file:  
