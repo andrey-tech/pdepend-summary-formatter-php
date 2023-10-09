@@ -48,7 +48,7 @@ Then run `PHP Depend` to scan your source PHP-code in directory `src` and genera
 ```
 
 Then run Pdepend Summary Formatter tool to show code quality metrics,
-measured by PHP Depend, in console and write results to specified text file `summary.txt`:
+measured by PHP Depend, in console and to write results to specified text file `summary.txt`:
 
 ```shell
 ./vendor/bin/pdepend-summary-formatter summary.xml --output-file=summary.txt
@@ -61,7 +61,7 @@ measured by PHP Depend, in console and write results to specified text file `sum
 ./vendor/bin/pdepend-summary-formatter <path to pdepend file summary.xml>
 ```
 
-The command line interface also accepts the following optional arguments:
+The Pdepend Summary Formatter tool command line interface also accepts the following optional arguments:
 
 - `--init` - Will generate a default config file `pdepend-summary-formatter.yml.dist` in current working directory.
 - `--output-file=` - Write results also to the specified text file.
@@ -108,17 +108,16 @@ FILE: src/AndreyTech/Pdepend/Summary/Formatter/Colorizer.php
 ## Software metrics
 
 [PHP Depend](https://pdepend.org/) (pdepend) tool can generate a large set of [software metrics](https://pdepend.org/documentation/software-metrics/index.html)
-from a given code base, these values can be used to measure the quality of a software project 
+from a given code base. These values can be used to measure the quality of a software project 
 and they help to identify that parts of an application where a refactoring should be applied.
 
-Pdepend Summary Formatter tool shows only part of software metrics, measured by PHP Depend,
-and colors them
-(<span style="color: green">green</span>, <span style="color: yellow">yellow</span>, <span style="color: red">red</span>)
-in the console according to boundaries for values, defined in configuration YAML file.
+Pdepend Summary Formatter tool shows only the part of software metrics, measured by PHP Depend,
+and shows them in `green`, `yellow` and `red` colors in the console,
+according to boundaries for values, defined in configuration YAML file.
 
-This table give a list of the software metrics, shows by Pdepend Summary Formatter tool
-for entire project, classes, traits, methods,
-and default values for <span style="color: red">red</span> boundaries of software metrics,
+This table shows a list of the software metrics by Pdepend Summary Formatter tool
+for entire project, classes, traits, methods. The table also shows 
+the default values for "red" boundaries of software metrics,
 based on [PHP Mess Detector](https://phpmd.org/) (PHPMD) tool.
 
 | Metric | Description                                                                                                                                                                                                                      | Project | Class | Trait | Method |
@@ -162,19 +161,19 @@ Note: ✓ - means there are no defined color boundaries for this metric.
 <a id="configuration-yaml-file"></a>
 ## Configuration YAML file
 
-By default Pdepend Summary Formatter search following configuration YAML files is current working directory:
+By default Pdepend Summary Formatter tool is looking for following configuration YAML files is current working directory:
 - `pdepend-summary-formatter.yml`,
 - `pdepend-summary-formatter.yml.dist`.
 
-Configuration YAML file allow to set color boundaries for values of software metrics.
+Configuration YAML file allows to set color boundaries for values of software metrics.
 
 Pdepend Summary Formatter tool currently defines three color boundaries:
 
-| Color                                     | Description |
-|-------------------------------------------|-------------|
-| <span style="color: green">green</span>   | Ok          |
-| <span style="color: yellow">yellow</span> | Warning     |
-| <span style="color: red">red</span>       | Error       |
+| Color    | Description |
+|----------|-------------|
+| `green`  | Ok          |
+| `yellow` | Warning     |
+| `red`    | Error       |
 
 A white value means there are no defined color boundaries for this metric.
 
@@ -211,12 +210,12 @@ Fragment of default configuration file:
 
 Pdepend Summary Formatter tool currently defines four different exit codes:
 
-| Code | Description                                                                                                                             |
-|------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| 0    | This exit code indicates that everything worked as expected, no "red" or "yellow" metrics exist.                                        |
-| 1    | This exit code indicates that an exception occurred which has interrupted tool during execution.                                        |
-| 2    | This exit code means that tool has processed the summary file without the occurrence of an error/exception, but "red" metrics exist.    |
-| 3    | This exit code means that tool has processed the summary file without the occurrence of an error/exception, but "yellow" metrics exist. |
+| Code | Description                                                                                                                       |
+|------|-----------------------------------------------------------------------------------------------------------------------------------|
+| 0    | This exit code indicates that everything worked as expected without "red" or "yellow" metrics.                                    |
+| 1    | This exit code indicates that an error/exception occurred which has interrupted tool during execution.                            |
+| 2    | This exit code means that tool has processed the summary file without the occurrence of an error/exception with "red" metrics.    |
+| 3    | This exit code means that tool has processed the summary file without the occurrence of an error/exception with "yellow" metrics. |
 
 <a id="authors-and-maintainers"></a>
 ## Authors and Maintainers
