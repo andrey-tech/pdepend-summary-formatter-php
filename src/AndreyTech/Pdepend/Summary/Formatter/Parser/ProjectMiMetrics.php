@@ -13,15 +13,16 @@ namespace AndreyTech\Pdepend\Summary\Formatter\Parser;
 
 final class ProjectMiMetrics
 {
-    public float $max = 100.0;
+    public float $max = 0.0;
     public float $min = 0.0;
     public float $avg = 0.0;
     public float $std = 0.0;
+    public int $total = 0;
 
     /**
      * @var float[]
      */
-    public array $miList = [];
+    private array $miList = [];
 
     public function addMi(float $mi): void
     {
@@ -37,9 +38,9 @@ final class ProjectMiMetrics
         $this->min = min($this->miList);
         $this->max = max($this->miList);
 
-        $total = count($this->miList);
+        $this->total = count($this->miList);
 
-        $this->avg = array_sum($this->miList) / $total;
+        $this->avg = array_sum($this->miList) / $this->total;
 
         $variance = array_reduce(
             $this->miList,
@@ -47,7 +48,7 @@ final class ProjectMiMetrics
             0.0
         );
 
-        $this->std = sqrt($variance / $total);
+        $this->std = sqrt($variance / $this->total);
 
         $this->miList = [];
     }

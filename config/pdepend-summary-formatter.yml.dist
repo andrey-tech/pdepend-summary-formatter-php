@@ -30,8 +30,8 @@ colorizer:
 
       # https://phpmd.org/rules/codesize.html#toomanypublicmethods
       npm:
-        green: [ 0, 10 ]
-        red+bold: [ 11, null ]
+        green: [ 0, 20 ]
+        red+bold: [ 21, null ]
 
       # https://phpmd.org/rules/codesize.html#toomanyfields
       vars:
@@ -108,14 +108,14 @@ colorizer:
       # https://en.wikipedia.org/wiki/Halstead_complexity_measures
       hv:
         green: [ 0, 400 ]
-        yellow+bold: [ 400, 500 ]
-        red+bold: [ 500, null ]
+        yellow+bold: [ 400, 700 ]
+        red+bold: [ 700, null ]
 
       # https://en.wikipedia.org/wiki/Halstead_complexity_measures
       he:
         green: [ 0, 4000 ]
-        yellow+bold: [ 4000, 5000 ]
-        red+bold: [ 5000, null ]
+        yellow+bold: [ 4000, 8000 ]
+        red+bold: [ 8000, null ]
 
       # https://www.artima.com/weblogs/viewpost.jsp?thread=210575
       # https://stackoverflow.com/questions/4731774/how-to-read-improve-c-r-a-p-index-calculated-by-php

@@ -146,12 +146,11 @@ final class Renderer
 
     private function addProjectTableRow(Table $table, ProjectMetrics $projectMetrics): void
     {
+        $projectMiMetrics = $this->buildProjectMiMetrics($projectMetrics);
+
         $table->addRow([
             $projectMetrics->generated,
-            $this->colorizer->colorizeMethodMetric('mi', round($projectMetrics->projectMiMetrics->min)),
-            $this->colorizer->colorizeMethodMetric('mi', round($projectMetrics->projectMiMetrics->avg)),
-            $this->colorizer->colorizeMethodMetric('mi', round($projectMetrics->projectMiMetrics->max)),
-            $this->colorizer->colorizeMethodMetric('', round($projectMetrics->projectMiMetrics->std)),
+            ...$projectMiMetrics,
             $this->colorizer->colorizeMethodMetric('', $projectMetrics->noc),
             $this->colorizer->colorizeMethodMetric('', $projectMetrics->nom),
             $this->colorizer->colorizeMethodMetric('', $projectMetrics->noi),
@@ -161,6 +160,22 @@ final class Renderer
             $this->colorizer->colorizeMethodMetric('', $projectMetrics->lloc),
             $this->colorizer->colorizeMethodMetric('', $projectMetrics->ncloc),
         ]);
+    }
+
+    private function buildProjectMiMetrics(ProjectMetrics $projectMetrics): array
+    {
+        $mi = $projectMetrics->projectMiMetrics;
+
+        if (0 === $mi->total) {
+            $miMin = $miAvg = $miMax = $miStd = '-';
+        } else {
+            $miMin = $this->colorizer->colorizeMethodMetric('mi', round($mi->min));
+            $miAvg = $this->colorizer->colorizeMethodMetric('mi', round($mi->avg));
+            $miMax = $this->colorizer->colorizeMethodMetric('mi', round($mi->max));
+            $miStd = $this->colorizer->colorizeMethodMetric('', round($mi->std));
+        }
+
+        return [ $miMin, $miAvg, $miMax, $miStd ];
     }
 
     private function buildTitle(OutputInterface $output, string $file): void
