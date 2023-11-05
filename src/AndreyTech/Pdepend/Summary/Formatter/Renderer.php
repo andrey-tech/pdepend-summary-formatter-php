@@ -11,10 +11,10 @@ declare(strict_types=1);
 
 namespace AndreyTech\Pdepend\Summary\Formatter;
 
-use AndreyTech\Pdepend\Summary\Formatter\Parser\ClassMetrics;
-use AndreyTech\Pdepend\Summary\Formatter\Parser\MethodMetrics;
-use AndreyTech\Pdepend\Summary\Formatter\Parser\ProjectMetrics;
-use AndreyTech\Pdepend\Summary\Formatter\Parser\TraitMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\ClassMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\MethodMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\ProjectMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\TraitMetrics;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Helper\TableStyle;
 use Symfony\Component\Console\Output\OutputInterface;

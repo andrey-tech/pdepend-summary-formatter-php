@@ -9,14 +9,14 @@
 
 declare(strict_types=1);
 
-namespace AndreyTech\Pdepend\Summary\Formatter;
+namespace AndreyTech\Pdepend\Summary\Extractor;
 
-use AndreyTech\Pdepend\Summary\Formatter\Parser\ClassMetrics;
-use AndreyTech\Pdepend\Summary\Formatter\Parser\MethodMetrics;
-use AndreyTech\Pdepend\Summary\Formatter\Parser\PackageMetrics;
-use AndreyTech\Pdepend\Summary\Formatter\Parser\ProjectMetrics;
-use AndreyTech\Pdepend\Summary\Formatter\Parser\ProjectMiMetrics;
-use AndreyTech\Pdepend\Summary\Formatter\Parser\TraitMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\ClassMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\MethodMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\PackageMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\ProjectMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\ProjectMiMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\TraitMetrics;
 use Exception;
 use SimpleXMLElement;
 
@@ -55,7 +55,9 @@ final class Parser
 
     private function parsePackages(SimpleXMLElement $xml, ProjectMetrics $projectMetrics): void
     {
+        /** @var SimpleXMLElement|null $packages */
         $packages = $xml->package;
+
         if (null === $packages) {
             return;
         }
@@ -71,7 +73,9 @@ final class Parser
 
     private function parseClasses(SimpleXMLElement $package, PackageMetrics $packageMetrics): void
     {
+        /** @var SimpleXMLElement|null $classes */
         $classes = $package->class;
+
         if (null === $classes) {
             return;
         }
@@ -80,7 +84,9 @@ final class Parser
             $classMetrics = $this->buildClassMetrics($class);
             $packageMetrics->addClassMetrics($classMetrics);
 
+            /** @var SimpleXMLElement|null $methods */
             $methods = $class->method;
+
             if (null === $methods) {
                 continue;
             }
@@ -93,7 +99,9 @@ final class Parser
 
     private function parseTraits(SimpleXMLElement $package, PackageMetrics $packageMetrics): void
     {
+        /** @var SimpleXMLElement|null $traits */
         $traits = $package->trait;
+
         if (null === $traits) {
             return;
         }
@@ -102,7 +110,9 @@ final class Parser
             $traitMetrics = $this->buildTraitMetrics($trait);
             $packageMetrics->addTraitMetrics($traitMetrics);
 
+            /** @var SimpleXMLElement|null $methods */
             $methods = $trait->method;
+
             if (null === $methods) {
                 continue;
             }

@@ -11,7 +11,8 @@ declare(strict_types=1);
 
 namespace AndreyTech\Pdepend\Summary\Formatter;
 
-use AndreyTech\Pdepend\Summary\Formatter\Parser\ProjectMetrics;
+use AndreyTech\Pdepend\Summary\Extractor\Parser;
+use AndreyTech\Pdepend\Summary\Extractor\Parser\ProjectMetrics;
 use Exception;
 use RuntimeException;
 use Symfony\Component\Console\Output\ConsoleOutput;

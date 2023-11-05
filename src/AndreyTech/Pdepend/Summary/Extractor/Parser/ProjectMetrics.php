@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace AndreyTech\Pdepend\Summary\Formatter\Parser;
+namespace AndreyTech\Pdepend\Summary\Extractor\Parser;
 
 final class ProjectMetrics
 {
