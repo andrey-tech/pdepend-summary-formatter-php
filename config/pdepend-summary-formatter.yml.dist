@@ -95,27 +95,23 @@ colorizer:
       # https://en.wikipedia.org/wiki/Halstead_complexity_measures
       hb:
         green: [ 0, 0.09 ]
-        yellow+bold: [ 0.10, 0.19 ]
-        red+bold: [ 0.20, null ]
+        yellow+bold: [ 0.10, null ]
 
       # https://en.wikipedia.org/wiki/Halstead_complexity_measures
       # https://github.com/escomplex/complexity-report/blob/master/.complexrc.example
       hd:
         green: [ 0, 15 ]
-        yellow+bold: [ 15, 20 ]
-        red+bold: [ 20, null ]
+        yellow+bold: [ 15, null ]
 
       # https://en.wikipedia.org/wiki/Halstead_complexity_measures
       hv:
         green: [ 0, 400 ]
-        yellow+bold: [ 400, 700 ]
-        red+bold: [ 700, null ]
+        yellow+bold: [ 400, null ]
 
       # https://en.wikipedia.org/wiki/Halstead_complexity_measures
       he:
-        green: [ 0, 4000 ]
-        yellow+bold: [ 4000, 8000 ]
-        red+bold: [ 8000, null ]
+        green: [ 0, 5000 ]
+        yellow+bold: [ 5000, null ]
 
       # https://www.artima.com/weblogs/viewpost.jsp?thread=210575
       # https://stackoverflow.com/questions/4731774/how-to-read-improve-c-r-a-p-index-calculated-by-php
