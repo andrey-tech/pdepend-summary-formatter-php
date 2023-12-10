@@ -100,8 +100,8 @@ colorizer:
       # https://en.wikipedia.org/wiki/Halstead_complexity_measures
       # https://github.com/escomplex/complexity-report/blob/master/.complexrc.example
       hd:
-        green: [ 0, 15 ]
-        yellow+bold: [ 15, null ]
+        green: [ 0, 20 ]
+        yellow+bold: [ 20, null ]
 
       # https://en.wikipedia.org/wiki/Halstead_complexity_measures
       hv:
