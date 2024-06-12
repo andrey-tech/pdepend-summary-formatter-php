@@ -3,6 +3,7 @@
 ![Pdepend Summary Formatter logo](./assets/pdepend-summary-formatter-logo.png)
 
 [![Latest Stable Version](https://poser.pugx.org/andrey-tech/pdepend-summary-formatter-php/v)](https://packagist.org/packages/andrey-tech/pdepend-summary-formatter-php)
+[![Total Downloads](https://poser.pugx.org/andrey-tech/pdepend-summary-formatter-php/downloads)](//packagist.org/packages/andrey-tech/pdepend-summary-formatter-php)
 [![PHP Version Require](http://poser.pugx.org/andrey-tech/pdepend-summary-formatter-php/require/php)](https://packagist.org/packages/andrey-tech/pdepend-summary-formatter-php)
 [![License](https://poser.pugx.org/andrey-tech/pdepend-summary-formatter-php/license)](https://packagist.org/packages/andrey-tech/pdepend-summary-formatter-php)
 

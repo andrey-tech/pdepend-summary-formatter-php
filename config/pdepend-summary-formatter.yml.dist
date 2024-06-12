@@ -117,3 +117,4 @@ colorizer:
       # https://stackoverflow.com/questions/4731774/how-to-read-improve-c-r-a-p-index-calculated-by-php
       crap0:
         green: [ 0, 29 ]
+        yellow+bold: [ 30, null ]

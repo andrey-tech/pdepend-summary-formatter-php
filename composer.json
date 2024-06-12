@@ -28,8 +28,8 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "ext-simplexml": "*",
-        "symfony/console": "^4.4 || ^5.4 || ^6.3",
-        "symfony/yaml": "^4.4 || ^5.4 || ^6.3"
+        "symfony/console": "^4.4 || ^5.4 || ^6.3 || ^7.1",
+        "symfony/yaml": "^4.4 || ^5.4 || ^6.3 || ^7.1"
     },
     "require-dev": {
         "overtrue/phplint": "^3.4",
