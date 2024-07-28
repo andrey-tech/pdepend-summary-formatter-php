@@ -4,7 +4,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/andrey-tech/pdepend-summary-formatter-php/v)](https://packagist.org/packages/andrey-tech/pdepend-summary-formatter-php)
 [![Total Downloads](https://poser.pugx.org/andrey-tech/pdepend-summary-formatter-php/downloads)](//packagist.org/packages/andrey-tech/pdepend-summary-formatter-php)
-[![PHP Version Require](http://poser.pugx.org/andrey-tech/pdepend-summary-formatter-php/require/php)](https://packagist.org/packages/andrey-tech/pdepend-summary-formatter-php)
+[![PHP Version Require](https://poser.pugx.org/andrey-tech/pdepend-summary-formatter-php/require/php)](https://packagist.org/packages/andrey-tech/pdepend-summary-formatter-php)
 [![License](https://poser.pugx.org/andrey-tech/pdepend-summary-formatter-php/license)](https://packagist.org/packages/andrey-tech/pdepend-summary-formatter-php)
 
 Pdepend Summary Formatter is a tool to show software code quality metrics, measured by
@@ -64,10 +64,12 @@ measured by PHP Depend, in console and to write results to specified text file `
 
 The Pdepend Summary Formatter tool command line interface also accepts the following optional arguments:
 
-- `--init` - Will generate a default config file `pdepend-summary-formatter.yml.dist` in current working directory.
-- `--output-file=` - Write results also to the specified text file.
-- `--config-file=` - The filepath to a custom config YAML file.
-- `--no-colors` - Disable colors in console.
+- `--init` — Will generate a default config file `pdepend-summary-formatter.yml.dist` in current working directory.
+- `--output-file=` — Write results also to the specified text file.
+- `--config-file=` — The filepath to a custom config YAML file.
+- `--ignore-red-metrics-on-exit` —  Will exit with a zero code, even "red" metrics exist.
+- `--ignore-yellow-metrics-on-exit` —  Will exit with a zero code, even "yellow" metrics exist.
+- `--no-colors` — Disable colors in console.
 
 An example command line of Pdepend Summary Formatter tool and PHP Depend tool:
 
@@ -157,7 +159,7 @@ based on [PHP Mess Detector](https://phpmd.org/) (PHPMD) tool.
 | vars   | [Number of Properties](https://phpmd.org/rules/codesize.html#toomanyfields)                                                                                                                                                      |         | 15    | 15    |        |
 | wmc    | [Weighted Method Count](https://phpmd.org/rules/codesize.html#excessiveclasscomplexity)                                                                                                                                          |         | 50    | 50    |        |
 
-Note: ✓ - means there are no defined "red" color boundaries for this metric.
+Note: ✓ — means there are no defined "red" color boundaries for this metric.
 
 <a id="configuration-yaml-file"></a>
 ## Configuration YAML file
