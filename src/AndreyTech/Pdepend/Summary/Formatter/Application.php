@@ -87,6 +87,27 @@ final class Application
         $exitCode = $this->renderToConsole($metrics);
         $this->renderToOutputFile($metrics, $outputFile);
 
+        return $this->prepareExitCode($exitCode);
+    }
+
+    private function prepareExitCode(int $exitCode): int
+    {
+        if (
+            $exitCode === self::EXIT_CODE_RED_METRICS
+            &&
+            $this->config->handleOptionIgnoreRedMetricsOnExit()
+        ) {
+            return 0;
+        }
+
+        if (
+            $exitCode === self::EXIT_CODE_YELLOW_METRICS
+            &&
+            $this->config->handleOptionIgnoreYellowMetricsOnExit()
+        ) {
+            return 0;
+        }
+
         return $exitCode;
     }
 

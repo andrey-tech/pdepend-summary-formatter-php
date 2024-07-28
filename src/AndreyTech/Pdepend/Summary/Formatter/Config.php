@@ -60,7 +60,23 @@ final class Config
         $option = new InputOption('init', null, InputOption::VALUE_NONE);
         $definition->addOption($option);
 
+        $option = new InputOption('ignore-red-metrics-on-exit', null, InputOption::VALUE_NONE);
+        $definition->addOption($option);
+
+        $option = new InputOption('ignore-yellow-metrics-on-exit', null, InputOption::VALUE_NONE);
+        $definition->addOption($option);
+
         $this->argvInput = new ArgvInput(null, $definition);
+    }
+
+    public function handleOptionIgnoreRedMetricsOnExit(): bool
+    {
+        return (bool) $this->argvInput->getOption('ignore-red-metrics-on-exit');
+    }
+
+    public function handleOptionIgnoreYellowMetricsOnExit(): bool
+    {
+        return (bool) $this->argvInput->getOption('ignore-yellow-metrics-on-exit');
     }
 
     public function handleOptionNoColor(): void
