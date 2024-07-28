@@ -32,7 +32,7 @@
         "symfony/yaml": "^4.4 || ^5.4 || ^6.3 || ^7.1"
     },
     "require-dev": {
-        "overtrue/phplint": "^3.4",
+        "overtrue/phplint": "^3.4 || ^9.0",
         "pdepend/pdepend": "^2.15",
         "phpmd/phpmd": "^2.14",
         "slevomat/coding-standard": "^8.13",
