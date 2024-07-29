@@ -8,7 +8,6 @@
     findUnusedBaselineEntry="true"
     findUnusedCode="false"
 >
-
     <projectFiles>
         <directory name="bin"/>
         <directory name="src"/>
