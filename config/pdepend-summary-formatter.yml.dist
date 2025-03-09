@@ -8,7 +8,7 @@ colorizer:
       # https://phpmd.org/rules/design.html#couplingbetweenobjects
       # https://pdepend.org/documentation/software-metrics/coupling-between-objects.html
       cbo:
-        green: [ 0, 13 ],
+        green: [ 0, 13 ]
         red+bold: [ 14, null ]
 
       # https://phpmd.org/rules/codesize.html#excessiveclasslength
@@ -35,7 +35,7 @@ colorizer:
 
       # https://phpmd.org/rules/codesize.html#toomanyfields
       vars:
-        green: [ 0, 15 ],
+        green: [ 0, 15 ]
         red+bold: [ 16, null ]
 
       # https://phpmd.org/rules/codesize.html#excessiveclasscomplexity
