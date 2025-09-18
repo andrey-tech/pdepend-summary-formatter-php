@@ -20,6 +20,8 @@ use AndreyTech\Pdepend\Summary\Extractor\Parser\TraitMetrics;
 use Exception;
 use SimpleXMLElement;
 
+use function round;
+
 final class Parser
 {
     /**
@@ -216,7 +218,7 @@ final class Parser
     {
         $crap = ($complexity ** 2) * ((1 - $coverage / 100) ** 3) + $complexity;
 
-        return (int) $crap;
+        return (int) round($crap);
     }
 
     private function getStringAttr(SimpleXMLElement $element, string $attribute): string
