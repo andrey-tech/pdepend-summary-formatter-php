@@ -216,7 +216,9 @@ final class Parser
      */
     private function calculateCRAP(int $complexity, int $coverage = 0): int
     {
-        $crap = ($complexity ** 2) * ((1 - $coverage / 100) ** 3) + $complexity;
+        $complexityFloat = (float) $complexity;
+        $coverageFraction = (float) $coverage / 100.0;
+        $crap = ($complexityFloat ** 2.0) * ((1.0 - $coverageFraction) ** 3.0) + $complexityFloat;
 
         return (int) round($crap);
     }
