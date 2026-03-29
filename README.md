@@ -32,7 +32,7 @@ latest version of [PHP Depend](https://github.com/pdepend/pdepend)
 and [Composer](https://getcomposer.org/).
 
 ```shell
-composer require --dev pdepend/pdepend:"^2.15"
+composer require --dev pdepend/pdepend
 composer require --dev andrey-tech/pdepend-summary-formatter-php
 ```
 
@@ -81,7 +81,7 @@ An example command line of Pdepend Summary Formatter tool and PHP Depend tool:
 An example of output text file `summary.txt`:
 
 ```text
-FILE: src/AndreyTech/Pdepend/Summary/Formatter/Colorizer.php
+FILE: /app/src/AndreyTech/Pdepend/Summary/Formatter/Colorizer.php
 +---------------------------+-----+-----+-----+-----+-----+-----+------+-----+------+
 | CLASS                     | wmc | cbo | loc | cis | nom | npm | vars | dit | nocc |
 +---------------------------+-----+-----+-----+-----+-----+-----+------+-----+------+
@@ -100,11 +100,11 @@ FILE: src/AndreyTech/Pdepend/Summary/Formatter/Colorizer.php
 | parseConfig               | 73 | 1   | 1    | 2     | 1     | 16  | 0.03 | 7  | 96  | 660  | 37  | 14 | 0.1 | 13  | 26  |
 +---------------------------+----+-----+------+-------+-------+-----+------+----+-----+------+-----+----+-----+-----+-----+
 
-+---------------------+--------+--------+--------+--------+-----+-----+-----+-----+-----+------+------+-------+
-| PROJECT             | min mi | avg mi | max mi | std mi | noc | nom | noi | nof | nop | loc  | lloc | ncloc |
-+---------------------+--------+--------+--------+--------+-----+-----+-----+-----+-----+------+------+-------+
-| 2023-10-04T17:15:14 | 57     | 72     | 82     | 9      | 11  | 74  | 0   | 0   | 2   | 1376 | 501  | 1250  |
-+---------------------+--------+--------+--------+--------+-----+-----+-----+-----+-----+------+------+-------+
++---------------------+--------+--------+--------+--------+--------+-----+-----+-----+-----+-----+------+------+-------+
+| PROJECT             | min mi | avg mi | max mi | std mi | med mi | noc | nom | noi | nof | nop | loc  | lloc | ncloc |
++---------------------+--------+--------+--------+--------+--------+-----+-----+-----+-----+-----+------+------+-------+
+| 2026-03-29T05:30:57 | 57     | 72     | 82     | 9      | 76     | 11  | 80  | 0   | 0   | 3   | 1486 | 559  | 1353  |
++---------------------+--------+--------+--------+--------+--------+-----+-----+-----+-----+-----+------+------+-------+
 ```
 
 <a id="software-metrics"></a>
