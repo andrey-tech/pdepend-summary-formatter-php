@@ -61,7 +61,7 @@ final class ProjectMiMetrics
 
         $variance = array_reduce(
             $this->miList,
-            fn (float $std, float $mi): float => $std + ($mi - $this->avg) ** 2,
+            fn (float $std, float $mi): float => $std + ($mi - $this->avg) ** 2.0,
             0.0
         );
 
@@ -76,6 +76,6 @@ final class ProjectMiMetrics
 
         $this->median = ($this->total % 2) ?
             $this->miList[$middle] :
-            ($this->miList[$middle - 1] + $this->miList[$middle]) / 2;
+            ($this->miList[$middle - 1] + $this->miList[$middle]) / 2.0;
     }
 }
