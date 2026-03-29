@@ -30,7 +30,7 @@ final class ProjectMiMetrics
     public int $total = 0;
 
     /**
-     * @var float[]
+     * @var list<float>
      */
     private array $miList = [];
 
@@ -41,11 +41,13 @@ final class ProjectMiMetrics
 
     public function calculate(): void
     {
-        $this->total = count($this->miList);
-
-        if (0 === $this->total) {
+        if ([] === $this->miList) {
             return;
         }
+
+        $this->total = count($this->miList);
+        $this->min = min($this->miList);
+        $this->max = max($this->miList);
 
         $this->calculateAverage();
         $this->calculateMedian();
@@ -55,10 +57,7 @@ final class ProjectMiMetrics
 
     public function calculateAverage(): void
     {
-        $this->min = min($this->miList);
-        $this->max = max($this->miList);
-
-        $this->avg = array_sum($this->miList) / $this->total;
+        $this->avg = array_sum($this->miList) / (float) $this->total;
 
         $variance = array_reduce(
             $this->miList,
@@ -66,14 +65,14 @@ final class ProjectMiMetrics
             0.0
         );
 
-        $this->std = sqrt($variance / $this->total);
+        $this->std = sqrt($variance / (float) $this->total);
     }
 
     private function calculateMedian(): void
     {
         sort($this->miList, SORT_NUMERIC);
 
-        $middle = floor($this->total / 2);
+        $middle = (int) floor($this->total / 2);
 
         $this->median = ($this->total % 2) ?
             $this->miList[$middle] :
