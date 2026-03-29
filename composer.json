@@ -37,6 +37,7 @@
         "phpmd/phpmd": "^2.15",
         "phpunit/phpunit": "^13.0",
         "slevomat/coding-standard": "^8.15.0",
+        "symfony/process": "^4.4 || ^5.4 || ^6.4 || ^7.4 || ^8.0",
         "squizlabs/php_codesniffer": "^3.13.5",
         "vimeo/psalm": "^6.16.1"
     },
@@ -57,6 +58,11 @@
             "AndreyTech\\": "src/AndreyTech"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests/"
+        }
+    },
     "bin": [
         "bin/pdepend-summary-formatter"
     ],
@@ -66,11 +72,13 @@
         "psalm": "psalm --long-progress --output-format=compact --config=psalm.xml.dist",
         "phpmd": "phpmd src ansi phpmd.xml.dist --suffixes php",
         "pdepend": "pdepend --summary-xml=.summary.xml --suffix=php --quiet src",
+        "test": "phpunit --configuration=phpunit.xml.dist",
         "check": [
             "@lint",
             "@cs",
             "@psalm",
-            "@phpmd"
+            "@phpmd",
+			"@test"
         ]
    }
 }
