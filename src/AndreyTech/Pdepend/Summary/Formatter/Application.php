@@ -2,7 +2,7 @@
 
 /**
  * @author    andrey-tech
- * @copyright 2023 andrey-tech
+ * @copyright 2023-2026 andrey-tech
  * @link      https://github.com/andrey-tech/
  * @license   MIT
  */
@@ -21,6 +21,8 @@ use Throwable;
 
 use function fclose;
 use function fopen;
+use function memory_get_peak_usage;
+use function microtime;
 use function sprintf;
 
 final class Application
@@ -154,8 +156,8 @@ final class Application
 
     private function showStats(float $startTime, int $exitCode): void
     {
-        $deltaTime = (int) round(1000 * (microtime(true) - $startTime));
-        $memoryUsage = (int) round(memory_get_peak_usage(true) / 1024 / 1024);
+        $deltaTime = (int) round(1000.0 * (microtime(true) - $startTime));
+        $memoryUsage = (int) round((float) memory_get_peak_usage(true) / 1024.0 / 1024.0);
 
         $this->message(
             sprintf('Exit code: %u, Time: %u ms, Memory: %u MiB', $exitCode, $deltaTime, $memoryUsage)
