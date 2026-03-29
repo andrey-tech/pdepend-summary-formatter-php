@@ -50,7 +50,7 @@ final class Colorizer
     /**
      * @param int|float $value
      */
-    public function colorizeClassMetric(string $name, $value): string
+    public function colorizeClassMetric(string $name, float $value): string
     {
         return $this->colorize($name, $value, $this->classMetrics);
     }
@@ -58,7 +58,7 @@ final class Colorizer
     /**
      * @param int|float $value
      */
-    public function colorizeMethodMetric(string $name, $value): string
+    public function colorizeMethodMetric(string $name, float $value): string
     {
         return $this->colorize($name, $value, $this->methodMetrics);
     }
@@ -67,7 +67,7 @@ final class Colorizer
      * @param int|float $value
      * @param array<string, array<string, list<int|float|null>>> $metrics
      */
-    private function colorize(string $name, $value, array $metrics): string
+    private function colorize(string $name, float $value, array $metrics): string
     {
         $ranges = $metrics[$name] ?? null;
 
@@ -90,7 +90,7 @@ final class Colorizer
     /**
      * @param int|float $value
      */
-    private function renderTemplate($value, string $tagValues): string
+    private function renderTemplate(float $value, string $tagValues): string
     {
         $values = explode('+', $tagValues);
 

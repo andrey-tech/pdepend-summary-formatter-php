@@ -93,7 +93,7 @@ final class Application
     private function prepareExitCode(int $exitCode): int
     {
         if (
-            $exitCode === self::EXIT_CODE_RED_METRICS
+            self::EXIT_CODE_RED_METRICS === $exitCode
             &&
             $this->config->handleOptionIgnoreRedMetricsOnExit()
         ) {
@@ -101,7 +101,7 @@ final class Application
         }
 
         if (
-            $exitCode === self::EXIT_CODE_YELLOW_METRICS
+            self::EXIT_CODE_YELLOW_METRICS === $exitCode
             &&
             $this->config->handleOptionIgnoreYellowMetricsOnExit()
         ) {
