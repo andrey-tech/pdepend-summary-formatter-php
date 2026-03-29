@@ -69,7 +69,7 @@ The Pdepend Summary Formatter tool command line interface also accepts the follo
 - `--config-file=` — The filepath to a custom config YAML file.
 - `--ignore-red-metrics-on-exit` — Will exit with a zero code, even "red" metrics exist.
 - `--ignore-yellow-metrics-on-exit` — Will exit with a zero code, even "yellow" metrics exist.
-- `--no-colors` — Disable colors in console.
+- `--no-color` — Disable colors in console.
 
 An example command line of Pdepend Summary Formatter tool and PHP Depend tool:
 
@@ -173,11 +173,11 @@ Configuration YAML file allows to set color boundaries for values of software me
 
 Pdepend Summary Formatter tool currently defines three color boundaries:
 
-| Color    | Description |
-|----------|-------------|
-| `green`  | Ok          |
-| `yellow` | Warning     |
-| `red`    | Error       |
+| Color    | Description | Exit code |
+|----------|-------------|-----------|
+| `green`  | Ok          | 0         |
+| `yellow` | Warning     | 3         |
+| `red`    | Error       | 2         |
 
 A white value means there are no defined color boundaries for this metric.
 

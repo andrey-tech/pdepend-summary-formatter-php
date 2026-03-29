@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metrics generated="2026-03-29T11:20:16" pdepend="@package_version@" ahh="0" andc="0" calls="174" ccn="133" ccn2="138" cloc="133" clsa="0" clsc="11" eloc="1017" fanout="39" leafs="11" lloc="559" loc="1486" maxDIT="0" ncloc="1353" noc="11" nof="0" noi="0" nom="80" nop="3" roots="0">
+  <files>
+    <file name="/app/src/AndreyTech/Pdepend/Summary/Extractor/Parser/ClassMetrics.php" loc="65" cloc="9" eloc="47" lloc="28" ncloc="56"/>
+    <file name="/app/src/AndreyTech/Pdepend/Summary/Extractor/Parser/MethodMetrics.php" loc="70" cloc="6" eloc="57" lloc="35" ncloc="64"/>
+  </files>
+  <package name="AndreyTech\Pdepend\Summary\Extractor\Parser" noc="6" noi="0" nom="14" nof="0" cr="0.15" rcr="0.15">
+    <class name="ClassMetrics" fqname="AndreyTech\Pdepend\Summary\Extractor\Parser\ClassMetrics" start="14" end="64" loc="51" cloc="3" eloc="16" lloc="12" ncloc="48" dit="0" noam="0" nocc="0" noom="0" nom="2" cr="0.15" rcr="0.15" ca="3" cbo="1" ce="1" impl="0" cis="14" csz="14" npm="2" vars="12" varsi="12" varsnp="12" wmc="2" wmci="2" wmcnp="2">
+      <file name="/app/src/AndreyTech/Pdepend/Summary/Extractor/Parser/ClassMetrics.php"/>
+      <method name="__construct" start="34" end="58" ccn="1" ccn2="1" loc="25" cloc="0" eloc="13" lloc="11" ncloc="25" npath="1" hnt="46" hnd="26" hv="216.22022703449" hd="2.1818181818182" hl="0.45833333333333" he="471.75322262071" ht="26.208512367817" hb="0.020200184168507" hi="99.100937390808" mi="59.217002121723"/>
+      <method name="addMethodMetrics" start="60" end="63" ccn="1" ccn2="1" loc="4" cloc="0" eloc="3" lloc="1" ncloc="4" npath="1" hnt="7" hnd="7" hv="19.651484454403" hd="6.25" hl="0.16" he="122.82177784002" ht="6.8234321022233" hb="0.0082362400950509" hi="3.1442375127045" mi="80.401219851729"/>
+    </class>
+    <class name="MethodMetrics" fqname="AndreyTech\Pdepend\Summary\Extractor\Parser\MethodMetrics" start="14" end="69" loc="56" cloc="0" eloc="18" lloc="16" ncloc="56" dit="0" noam="0" nocc="0" noom="0" nom="1" cr="0.15" rcr="0.15" ca="4" cbo="0" ce="0" impl="0" cis="17" csz="17" npm="1" vars="12" varsi="16" varsnp="16" wmc="1" wmci="1" wmcnp="1">
+      <file name="/app/src/AndreyTech/Pdepend/Summary/Extractor/Parser/MethodMetrics.php"/>
+      <method name="__construct" start="34" end="68" ccn="1" ccn2="1" loc="35" cloc="0" eloc="18" lloc="16" ncloc="35" npath="1" hnt="66" hnd="36" hv="341.21505009519" hd="2.125" hl="0.47058823529412" he="725.08198145228" ht="40.282332302905" hb="0.02690317193754" hi="160.57178828009" mi="54.746731179847"/>
+    </class>
+  </package>
+</metrics>
