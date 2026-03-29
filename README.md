@@ -42,7 +42,7 @@ Generate a default config file `pdepend-summary-formatter.yml.dist` in current w
 ./vendor/bin/pdepend-summary-formatter --init
 ```
 
-Then run `PHP Depend` to scan your source PHP-code in directory `src` and generate an XML report in file `summary.xml`:
+Then run `PHP Depend` to scan your source PHP code in directory `src` and generate an XML report in file `summary.xml`:
 
 ```shell
 ./vendor/bin/pdepend --summary-xml=summary.xml --suffix=php src
@@ -67,8 +67,8 @@ The Pdepend Summary Formatter tool command line interface also accepts the follo
 - `--init` — Will generate a default config file `pdepend-summary-formatter.yml.dist` in current working directory.
 - `--output-file=` — Write results also to the specified text file.
 - `--config-file=` — The filepath to a custom config YAML file.
-- `--ignore-red-metrics-on-exit` —  Will exit with a zero code, even "red" metrics exist.
-- `--ignore-yellow-metrics-on-exit` —  Will exit with a zero code, even "yellow" metrics exist.
+- `--ignore-red-metrics-on-exit` — Will exit with a zero code, even "red" metrics exist.
+- `--ignore-yellow-metrics-on-exit` — Will exit with a zero code, even "yellow" metrics exist.
 - `--no-colors` — Disable colors in console.
 
 An example command line of Pdepend Summary Formatter tool and PHP Depend tool:
@@ -156,6 +156,7 @@ based on [PHP Mess Detector](https://phpmd.org/) (PHPMD) tool.
 | npath  | [NPath Complexity](https://phpmd.org/rules/codesize.html#npathcomplexity)                                                                                                                                                        |         |       |       | 200    |
 | nop    | Number of Packages (namespaces)                                                                                                                                                                                                  | ✓       |       |       |        |
 | std mi | [Standard deviation](https://en.wikipedia.org/wiki/Standard_deviation) of [Maintainability Index](https://learn.microsoft.com/en-us/visualstudio/code-quality/code-metrics-maintainability-index-range-and-meaning?view=vs-2022) | ✓       |       |       |        |
+| med mi | [Median](https://en.wikipedia.org/wiki/Median) of [Maintainability Index](https://learn.microsoft.com/en-us/visualstudio/code-quality/code-metrics-maintainability-index-range-and-meaning?view=vs-2022)                         | ✓       |       |       |        |
 | vars   | [Number of Properties](https://phpmd.org/rules/codesize.html#toomanyfields)                                                                                                                                                      |         | 15    | 15    |        |
 | wmc    | [Weighted Method Count](https://phpmd.org/rules/codesize.html#excessiveclasscomplexity)                                                                                                                                          |         | 50    | 50    |        |
 
