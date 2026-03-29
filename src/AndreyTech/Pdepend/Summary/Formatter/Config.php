@@ -2,7 +2,7 @@
 
 /**
  * @author    andrey-tech
- * @copyright 2023 andrey-tech
+ * @copyright 2023-2026 andrey-tech
  * @link      https://github.com/andrey-tech/
  * @license   MIT
  */
@@ -22,6 +22,8 @@ use Symfony\Component\Yaml\Yaml;
 use function copy;
 use function getcwd;
 use function is_file;
+use function is_readable;
+use function is_string;
 use function is_writable;
 use function sprintf;
 
@@ -100,9 +102,9 @@ final class Config
 
     public function handleArgumentSummaryFile(): string
     {
-        $summaryFile = (string) $this->argvInput->getArgument('summary-file');
+        $summaryFile = $this->argvInput->getArgument('summary-file');
 
-        if (empty($summaryFile)) {
+        if (!is_string($summaryFile) || '' === $summaryFile) {
             throw new RuntimeException('Missing required argument <path to pdepend file summary.xml>".');
         }
 
@@ -123,14 +125,13 @@ final class Config
 
     public function handleOptionConfigFile(): string
     {
-        /** @var string|null $configFile */
         $configFile = $this->argvInput->getOption('config-file');
 
         if (null === $configFile) {
             return $this->searchConfigFile();
         }
 
-        if (empty($configFile)) {
+        if (!is_string($configFile) || '' === $configFile) {
             throw new RuntimeException('The "--config-file" option requires a value.');
         }
 
@@ -167,6 +168,10 @@ final class Config
     {
         $cwd = getcwd();
 
+        if (false === $cwd) {
+            throw new RuntimeException('Can not get current working directory.');
+        }
+
         $this->message(
             sprintf('Creating default config file "%s" in current working directory...', self::CONFIG_FILE_DIST)
         );
@@ -192,6 +197,10 @@ final class Config
     private function searchConfigFile(): string
     {
         $cwd = getcwd();
+
+        if (false === $cwd) {
+            throw new RuntimeException('Can not get current working directory.');
+        }
 
         foreach ([ self::CONFIG_FILE, self::CONFIG_FILE_DIST ] as $configFileName) {
             $configFile = $this->buildFullFileName($cwd, $configFileName);
