@@ -2,7 +2,7 @@
 
 /**
  * @author    andrey-tech
- * @copyright 2023 andrey-tech
+ * @copyright 2023-2026 andrey-tech
  * @link      https://github.com/andrey-tech/
  * @license   MIT
  */
@@ -162,6 +162,9 @@ final class Renderer
         ]);
     }
 
+    /**
+     * @return list<string>
+     */
     private function buildProjectMiMetrics(ProjectMetrics $projectMetrics): array
     {
         $mi = $projectMetrics->projectMiMetrics;
