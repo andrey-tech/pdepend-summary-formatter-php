@@ -167,15 +167,16 @@ final class Renderer
         $mi = $projectMetrics->projectMiMetrics;
 
         if (0 === $mi->total) {
-            $miMin = $miAvg = $miMax = $miStd = '-';
+            $miMin = $miAvg = $miMax = $miStd = $miMedian = '-';
         } else {
             $miMin = $this->colorizer->colorizeMethodMetric('mi', round($mi->min));
             $miAvg = $this->colorizer->colorizeMethodMetric('mi', round($mi->avg));
             $miMax = $this->colorizer->colorizeMethodMetric('mi', round($mi->max));
             $miStd = $this->colorizer->colorizeMethodMetric('', round($mi->std));
+            $miMedian = $this->colorizer->colorizeMethodMetric('mi', round($mi->median));
         }
 
-        return [ $miMin, $miAvg, $miMax, $miStd ];
+        return [ $miMin, $miAvg, $miMax, $miStd, $miMedian ];
     }
 
     private function buildTitle(OutputInterface $output, string $file): void
@@ -244,6 +245,7 @@ final class Renderer
                 'avg mi',
                 'max mi',
                 'std mi',
+                'med mi',
                 'noc',
                 'nom',
                 'noi',
