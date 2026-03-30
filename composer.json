@@ -78,7 +78,7 @@
             "@cs",
             "@psalm",
             "@phpmd",
-			"@test"
+            "@test"
         ]
    }
 }
